@@ -2,11 +2,10 @@ enum RadioMessage {
     message1 = 49434
 }
 input.onButtonPressed(Button.A, function () {
-    Mining_Stop = 0
-    while (Mining_Stop == 0) {
-        basic.showString("Mining Starting")
-        radio.sendValue("Mining_Started", 1)
-    }
+    radio.sendNumber(1)
+    basic.showString("Mining Starting")
+    radio.sendNumber(0)
+    basic.pause(100)
 })
 input.onButtonPressed(Button.B, function () {
     Mining_Stop = 1
